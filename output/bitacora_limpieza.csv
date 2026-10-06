@@ -1,0 +1,14 @@
+decision,afectados,fundamento
+3.1 conservar NaN estructurales (monto en Plazo/Rescision; dias en no-Plazo),1063,"Ausencia por diseno OCDS, no imputable; el TARGET usa descripcion normalizada, no el monto"
+3.1 descartar columnas guarantee*/rationale/prepaid (>99.8% nulas),7,Sin hipotesis asociada; imputar inventaria datos
+3.2 sin eliminacion (0 duplicados exactos y 0 PK parcial en base),0,"Relaciones N:1 (lots/items) son por diseno, se agregan no se deducen"
+"3.3 normalizar encoding/lower-strip (Ampliacion de Monto/Plazo, Renovacion, Rescision)",3735,Misma semantica escrita distinta por codificacion
+3.3 NO winsorizar montos (conservar + usar log_monto),1,Outliers son senal (contratos grandes); recortar sesgaria target
+3.3 filtrar 36 USD + 39 cancelled (separado),75,"Moneda no comparable / canceladas no pueden ampliarse; se reportan, no se modelan"
+"3.4 fechas a datetime tz-naive, RUC upper-strip, montos a numerico",14343,Comparabilidad y orden temporal para historial proveedor sin leakage
+3.5 target=hubo_ampliacion_monto (Ampliacion de Monto; Renovacion excluida por ser alquiler),1539,Definicion estricta de 'aumento del monto inicial'; tasa 10.7% apta para clasificacion
+3.5 tender join: 6 bloques desde records (metodo/categoria/montos/criterio/duraciones/fechas),11539,"Todo pre-adjudicacion, sin leakage; match 100% awards en auditoria 3.6"
+3.5 historial proveedor sin leakage (cumcount/cumsum shift por fecha),14343,Evita usar futuro para predecir pasado; patron temporal pedido en Anotaciones
+"3.6 LEFT awards->contratos/enmiendas/lotes/proveedor (agregados, sin duplicar filas)",14343,Unidad 1 fila=1 adjudicacion preservada
+3.7 filtro active+PYG,75,39 cancelled + 36 USD excluidos (no ampliables / no comparables)
+3.7 filtro categoria goods/services/works (obras+compras+servicios),0,Alcance pedido; resto/indefinido fuera

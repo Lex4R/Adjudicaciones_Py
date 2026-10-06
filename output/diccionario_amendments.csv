@@ -1,0 +1,18 @@
+archivo,campo,tipo_obs,pct_nulos,rango/categorias,descripcion
+con_amendments.csv,compiledRelease/id,object,0.0,"1639 unicos; ej: ['190915-lp0583-adecuacion-lineas-media-tension-alimentadores-cae3-cae4-cae5-par4-1294218667', '206004-adquisicion-utiles-oficina-ad-referendum-1294674969', '206344-adquisicion-repuestos-vehiculos-ad-referendum-1295532971']...",proceso
+con_amendments.csv,compiledRelease/contracts/0/id,object,0.0,"2539 unicos; ej: ['LP-25002-11-20121', 'CD-30208-11-20186', 'CD-30208-11-20250']...",FK contrato (clave de cruce con contracts)
+con_amendments.csv,compiledRelease/contracts/0/amendments/0/id,object,0.0,"3735 unicos; ej: ['190915-rotel-ingenieria-s-r-l-1ampliacion', '206004-myriam-rocio-garay-aguero-1ampliacion', '206344-distribuidora-g-m-2ampliacion']...",PK enmienda
+con_amendments.csv,compiledRelease/contracts/0/amendments/0/date,object,0.0,"1577 unicos; ej: ['2011-11-09T00:00:00-04:00', '2011-08-26T00:00:00-04:00', '2011-12-12T00:00:00-04:00']...",fecha enmienda
+con_amendments.csv,compiledRelease/contracts/0/amendments/0/description,object,0.0,"4 unicos; ej: ['Ampliación de Monto', 'Ampliación de Plazo', 'Renovación de Alquiler de Inmueble', 'Rescisión']",TIPO enmienda: Ampliacion de Monto / Plazo / Renovacion Alquiler / Rescision (TARGET)
+con_amendments.csv,compiledRelease/contracts/0/amendments/0/amendsAmount/amount,float64,28.46,"[16601.0, 9983185747.0]",monto ampliado (NaN si solo plazo; 0 nunca; ver anotacion: plazo=>monto cero/NaN)
+con_amendments.csv,compiledRelease/contracts/0/amendments/0/amendsAmount/currency,object,28.46,"2 unicos; ej: ['PYG', 'USD']",divisa enmienda
+con_amendments.csv,compiledRelease/contracts/0/amendments/0/financialCode,object,28.7,"2663 unicos; ej: ['AC-25002-11-4017', 'AC-30208-11-2897', 'AC-30206-11-4406']...",
+con_amendments.csv,compiledRelease/contracts/0/amendments/0/amendsPeriod/durationInDays,float64,74.83,"[0.0, 1825.0]",dias extra si Ampliacion de Plazo
+con_amendments.csv,compiledRelease/contracts/0/amendments/0/rationale,object,99.81,"2 unicos; ej: ['Incumplimiento del proveedor o contratista', 'Demás casos estipulados en el contrato, de acuerdo con su naturaleza']",
+con_amendments.csv,compiledRelease/contracts/0/amendments/0/guarantee/id,object,99.84,"6 unicos; ej: ['23.1503.01925', '35.1503.0001632.0000', '36.1509.0001698.0000', '3770/16', '397/2017', '1503']",
+con_amendments.csv,compiledRelease/contracts/0/amendments/0/guarantee/type,object,99.81,"2 unicos; ej: ['Póliza de Seguro', 'Declaración Jurada']",
+con_amendments.csv,compiledRelease/contracts/0/amendments/0/guarantee/date,object,99.81,"7 unicos; ej: ['2010-12-21T12:00:00-04:00', '2011-06-24T12:00:00-04:00', '2014-02-19T00:00:00-04:00', '2016-01-13T12:00:00-04:00', '2014-11-04T12:00:00-04:00', '2015-12-21T00:00:00-04:00']",
+con_amendments.csv,compiledRelease/contracts/0/amendments/0/guarantee/period/endDate,object,99.81,"7 unicos; ej: ['2012-12-21T12:00:00-04:00', '2014-06-24T12:00:00-04:00', '2014-06-30T00:00:00-04:00', '2016-01-13T12:00:00-04:00', '2014-11-04T12:00:00-04:00', '2017-09-30T00:00:00-04:00']",
+con_amendments.csv,compiledRelease/contracts/0/amendments/0/guarantee/percentage,float64,99.89,"[20.0, 4385808165.0]",
+con_amendments.csv,compiledRelease/contracts/0/amendments/0/guarantee/executed,object,99.81,1 unicos; ej: [False],
+con_amendments.csv,compiledRelease/contracts/0/amendments/0/prepaid,object,99.81,"2 unicos; ej: [True, False]",
