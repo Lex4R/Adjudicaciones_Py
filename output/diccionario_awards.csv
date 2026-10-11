@@ -1,0 +1,8 @@
+archivo,campo,tipo_obs,pct_nulos,rango/categorias,descripcion
+awards.csv,compiledRelease/id,object,0.0,"8599 unicos; ej: ['204835-compra-medicamentos-1294743765', '206441-adquisicion-papel-p-uso-oficina-ad-ref-1295612345', '196208-adquisicion-desmalezadoras-motosierras-fumigadoras-1294412903']...",ID proceso/liberacion (agrupa adjudicaciones del mismo llamado)
+awards.csv,compiledRelease/awards/0/id,object,0.0,"14343 unicos; ej: ['204835-indufar-c-i-s-a-3', '204835-lourdes-elizabeth-peralta-rivas-2', '206441-gustavo-ramon-quevedo-ovelar-1']...",PK adjudicacion (award id)
+awards.csv,compiledRelease/awards/0/status,object,0.0,"2 unicos; ej: ['active', 'cancelled']",active/cancelled
+awards.csv,compiledRelease/awards/0/statusDetails,object,0.0,"2 unicos; ej: ['Adjudicado', 'Cancelado']",Adjudicado/Cancelado (redundante con status)
+awards.csv,compiledRelease/awards/0/date,object,0.0,"8606 unicos; ej: ['2011-01-11T11:02:45-04:00', '2011-01-21T12:19:05-04:00', '2011-01-07T15:08:23-04:00']...",Fecha adjudicacion (ISO8601 tz)
+awards.csv,compiledRelease/awards/0/value/amount,int64,0.0,"[0, 1456099999200]",Monto inicial adjudicado (base del target)
+awards.csv,compiledRelease/awards/0/value/currency,object,0.0,"2 unicos; ej: ['PYG', 'USD']","Divisa (PYG 99.75%, USD 36 casos; se descarta tras auditoria)"
